@@ -43,22 +43,28 @@ def modifyArray(num, turn):
 def checkForWinner(gameBoard):
   ### X axis
   if(gameBoard[0][0] == 'X' and gameBoard[0][1] == 'X' and gameBoard[0][2] == 'X'):
-    print("X has won!")
+    print("Haz ganado")
+    monday.talk('Buena partida')
     return "X"
   elif(gameBoard[0][0] == 'O' and gameBoard[0][1] == 'O' and gameBoard[0][2] == 'O'):
-    print("O has won!")
+    print("Monday ganó!")
+    monday.talk('Gané, suerte para la proxima')
     return "O"
   elif(gameBoard[1][0] == 'X' and gameBoard[1][1] == 'X' and gameBoard[1][2] == 'X'):
-    print("X has won!")
+    print("Haz ganado")
+    monday.talk('Buena partida')
     return "X"
   elif(gameBoard[1][0] == 'O' and gameBoard[1][1] == 'O' and gameBoard[1][2] == 'O'):
-    print("O has won!")
+    print("Monday ganó!")
+    monday.talk('Gané, suerte para la proxima')
     return "O"
   elif(gameBoard[2][0] == 'X' and gameBoard[2][1] == 'X' and gameBoard[2][2] == 'X'):
-    print("X has won!")
+    print("Haz ganado")
+    monday.talk('Buena partida')
     return "X"
   elif(gameBoard[2][0] == 'O' and gameBoard[2][1] == 'O' and gameBoard[2][2] == 'O'):
-    print("O has won!")
+    print("Monday ganó!")
+    monday.talk('Gané, suerte para la proxima')
     return "O"
   ### Y axis
   if(gameBoard[0][0] == 'X' and gameBoard[1][0] == 'X' and gameBoard[2][0] == 'X'):
@@ -112,9 +118,9 @@ while(leaveLoop == False):
   ### It's the player turn
   if(turnCounter % 2 == 0):
     printGameBoard()
-    #numberPicked = int(input("\nChoose a number [1-9]: "))
     monday.talk('Elige un número entre 1 y 9')
-    numberPicked = int(monday.play())
+    numberPicked = int(input("\nChoose a number [1-9]: "))
+    #numberPicked = int(monday.play())
     if(numberPicked == 0):
       print("Número inválido. Por favor prueba otro")
       monday.talk('número inválido. Por favor prueba otro')
@@ -143,4 +149,5 @@ while(leaveLoop == False):
   winner = checkForWinner(gameBoard)
   if(winner != "N"):
     print("\nFin del juego! gracias por jugar conmigo:)")
+    monday.talk('gracias por jugar conmigo')
     break
